@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name="description" content="Buurtcampus ">
+        <meta name="keywords" content="HTML,CSS,PHP">
+        <meta name="author" content="Duneya Saleh">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="og:title" property="og:title" content="Duneya">
+        <link rel="shortcut icon" href="{{ asset('image/fav-icon-duneya.svg') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('/js/filter.js') }}"></script>
+        <script src="{{ asset('/js/script.js') }}" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <title>Plant Swap</title>
+        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+    <header id="nav">
+            <section id="navbar">
+            @if (Route::has('login'))
+                <div class="nav boven">
+                <div class="menu sticky bovennav navitems">
+               
+                    @auth
+                    <a class="nav-items" href="{{ url('/posten') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Add Post</a>
+                    @else
+                    <style>
+                            @media screen and (max-width: 800px) {
+                                .mobielfix{
+                                    margin-right: -100vw!important;
+                                }
+                            }
+                            </style>
+                        <!-- <a class="nav-items" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a> -->
+                        <a class="nav-items login-button-card" href="#" >Log in</a>
+
+
+                        @if (Route::has('register'))
+                            <a class="nav-items" href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
+                    <a class="nav-items" href="mailto:info@buurtcampus.nl" >Info@buurtcampus.nl</a>
+                <a class="nav-items mobielfix" href="tel:06234567778">06234567778</a>
+   
+                </div>
+            @endif
+            </div>
+            </section>
+            <div class="col-md-4 login-card-homepage" >
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <section id="navbar">
+                <div class="nav">
+                    <div class="menu sticky ondernav">
+                        <a href="<?php echo url("/") ?>">
+                        <img src="{{ asset('image/PlantSwap-logo.png') }}" alt="plantswap" class="logonav"> 
+                        </a>
+                        
+                        <div class="hulp-items">
+                            <a class="nav-items hulp-items aanbieden" href="<?php echo url('/') ?>">Home</a>
+                            <a class="nav-items hulp-items" href="https://www.buurtcampusoost.nl/s/news" >Nieuws</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main>
+
+<section>
+<div class="container-xxl"> 
+            @yield('content')
+</div>
+
+</section>
+    </main>
+
+
+<footer>
+<div class="footer_top">
+    <div>
+<div class="sociaal_media-knoppen">
+<a href="https://www.facebook.com/buurtcampusnieuwwest"><svg xmlns="http://www.w3.org/2000/svg" aria-label="Facebook van buurtcampus oost" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+<a href="https://twitter.com/Buurtcampus"><svg xmlns="http://www.w3.org/2000/svg" aria-label="twitter van buurtcampus oost" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+<a href="https://www.youtube.com/channel/UCP4o6SLi_oy7sVsodrD3Fxw"><svg xmlns="http://www.w3.org/2000/svg" aria-label="youtube van buurtcampus oost" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+<a href="https://www.instagram.com/buurtcampus_nw/"><svg xmlns="http://www.w3.org/2000/svg" aria-label="istagram van buurtcampus oost" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</div>
+<!-- <div>
+    <p>De PlantSwap kast wordt officieel geopend met een PlantSwap Party in maart 2023.</p>
+</div> -->
+    </div>
+   
+<div class="footer_info">
+    <h2>Buurtcampus Oost zoeken studenten</h2>
+    <p>In Buurtcampus Oost zoeken studenten samen met bewoners, professionals, ondernemers, docenten en onderzoekers gezamenlijk naar oplossingen 
+         voor kansrijke uitdagingen uit de buurt.
+</p>
+<a href="https://www.buurtcampusnieuwwest.nl/s/events" class="footer-knop">DOE JE OOK MEE?</a>
+</div>
+
+    </div>
+    <div class="footerbottom">
+<p>Buurtcampus is een initiatief van Hogeschool van Amsterdam (HvA) en Openbare Bibliotheek Amsterdam (OBA). Meer Buurtcampussen? Kijk op www.buurtcampusoost.nl of op www.buurtcampusnieuwwest.nl.</p>
+<P><a href="https://www.buurtcampusoost.nl/s/article?urlname=Privacy-Disclaimer-NW" >Privacy Disclaimer</a></P>
+
+    </div>
+</footer>
+<body>
+</html>

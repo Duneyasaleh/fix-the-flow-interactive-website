@@ -1,25 +1,33 @@
-> _Fork_ deze leertaak en ga aan de slag. 
-Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. 
-De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+# Buurtcampus oost.
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+- Bij Buurtcampus wordt op korte termijn een stekjesbieb neergezet. Buurtbewoners kunnen stekjes halen uit de stekjesbieb, maar ook stekjes brengen naar de stekjesbieb.
 
-## User Story
-<!-- Schrijf de user story waar je aan hebt gewerkt  -->
+  * [Beschrijving](#beschrijving)
+  * [Kenmerken](#kenmerken)
+  * [Bronnen](#bronnen)
+  
+  ## Beschrijving
+ buurtcampus hadden 3 users stories ontvagen en ik mag 1 kiezen en aanwerken, en tijdens mijn onderzoek kom ik achter dat in een project kan ik de 3 users stories      oplossing.
+ 
+ ### de users stories zijn:
+  - Als buurtbewoner van Amsterdam Oost wil ik informatie vinden over het verzorgen van planten, zodat ik niet steeds nieuwe planten hoef te kopen en daarme verspilling tegen ga. 
+  - Als buurtbewoner van Amsterdam Oost wil ik informatie vinden over de positieve bijdrage van planten op de leefomgeving, zodat ik gemotiveerd raak stekjes te planten in mijn omgeving
+  - Als buurtbewoner van Amsterdam Oost wil ik kunnen zien welke stekjes momenteel in de stekjeskast zitten, zodat ik kan overwegen een stekje om te ruilen
+ 
+mijn oplossing was een systeem bouwen met waar in een account kan maken en je ervaring kan delen met je buurtbewoners en je kan ook stekjes ruilen met mensen, ook als je een admin kan je toevoegen wat voor stekjes zijn beschikbaar en welke moet het terug brengen ect.
+![image](https://user-images.githubusercontent.com/54691201/199520842-3a84f7d3-8a98-45c2-ad93-8f29f80263bf.png)
+![image](https://user-images.githubusercontent.com/54691201/199520953-2a65ca4b-0124-45a3-b9bb-d8daea890074.png)
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+
+online link: https://buurtcampusoost.duneyasaleh.com/public/
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
+Ik heb voor deze procjt een framwork laravel :
+- PHP
+- HTML
+- CSS
 
+## Bronnen
 
-
-## Licentie
-
-![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
-
-This work is licensed under [GNU GPLv3](./LICENSE).
+https://laravel.com/
+https://getbootstrap.com/
