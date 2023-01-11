@@ -23,7 +23,7 @@ mijn oplossing was een systeem bouwen met waar in een account kan maken en je er
 Ik heb voor deze procjt een :
 - HTML
 - CSS
--JS
+- JS
 
 ## Bronnen
 
