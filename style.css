@@ -1,0 +1,588 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+@import url(https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Source+Serif+Pro&display=swap);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color:#4E7141;
+  --secondary-color: #333568;
+  --secondary-color-oraje: #f26f20;
+}
+*{
+    font: 100%/1.2 Arial, Helvetica, sans-serif;
+}
+.hulp-items > a:hover{
+  color: var(--secondary-color-oraje);
+}
+ h2, h3, h4, p{
+  max-width: 30rem;
+}
+h1, h2, h3, h4{
+ color: var(--secondary-color);
+}
+.menu {
+  width: 80%;
+  margin: 0 auto;
+}
+.menu a {
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 20px;
+  transition: .4s;
+}
+.nav-items{
+  transition: .4s;
+  
+}
+.boven{
+  background-color: var(--secondary-color) ;
+  width: 100%;
+  height: 45px;
+}
+
+.bovennav{
+  position: absolute;
+  top: 0;
+  margin-left: 240px;
+}
+
+.bovennav > a{
+  float: right;
+  color: white;
+  margin-left: 50px;
+  margin-top: -12px;
+  transition: .4s;
+
+}
+.bovennav > a:hover{
+color: var(--secondary-color-oraje);
+
+}
+.navbar-collapse {
+  padding-right: 4em;
+}
+.login-card-homepage{
+  position: absolute;
+  right: 0;
+  z-index: 999999999999999;
+  display: none;
+}
+.login-card-homepage-show{
+  display: block;
+}
+
+
+.ondernav{
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  width: 100vw;
+  height: 65px;
+  background-color: white;
+}
+
+.hulp-items > a{
+  margin-top: -106px;
+  float: right;
+  margin-right: 120px;
+  color: var(--primary-color);
+}
+
+.logonav{
+  width: 166px;
+  margin-left: 4em;
+  cursor: pointer;
+}
+
+.aanbieden{
+  margin-right: 350px!important;
+}
+
+
+/* home page */
+
+.home_page-container{
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  height: 450px;
+ 
+}
+.achtergrond_home{
+  background-color: var(--primary-color);
+  width: 450px;
+  height: 450px;
+  z-index: 0;
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.groene_achter-img{
+  position: relative;
+  width: 550px;
+}
+.home_page-container img{
+  width: 86%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.home_page-container > .home_page_text {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  /* transform: translateY(1rem);
+  opacity: 0;
+  animation: fade-up 0.1s 0.3s ease-out forwards; */
+
+ 
+}
+.Home-aanmelden_knop{
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  width: 8.5em;
+  padding: 1.5em;
+  margin-top: 1em;
+  color: white;
+  transition: .4s;
+  
+}
+.home_page-container a:hover{
+  color: white;
+  background-color: var(--secondary-color-oraje);
+  transition: .4s;
+}
+
+.home_page-exinfo{
+  display: flex;
+  gap: 1em;
+  padding: 10em 0 6em 0;
+  text-align: center;
+}
+.home_page-exinfo img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+.home_page-exinfo h2{
+  color: var(--primary-color);
+  margin-top: 1em;
+  font-size: x-large;
+}
+.home_page-exinfo p{
+  margin-bottom: 4em;
+}
+.Home-knop_ruilen{
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  width: 8.5em;
+  padding: 1.5em;
+  color: white;
+}
+.home_page-exinfo  a:hover{
+  color: white;
+  background-color: var(--secondary-color-oraje);
+  transition: .4s;
+}
+/* aanmelden pagina */
+.aanmelden_page{
+  margin: 6em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+}
+.registreren_form{
+  padding: 2em;
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  margin: 0 1em;
+}
+.registreren_form > form{
+  display: grid;
+  padding: 1em 0;
+}
+.registreren_form > form > div{
+  display: inline-grid;
+  padding: .5em 0;
+}
+.registreren_form > form > div > input, input[type=submit]{
+padding: 1em ;
+}
+.registreren_form > form > input{
+  border: 1px solid var(--primary-color);
+}
+.registreren_form > form > input[type=submit]{
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: white;
+}
+.registreren_form > form > input[type=submit]:hover{
+  background-color: var(--secondary-color-oraje);
+  border: 1px solid var(--secondary-color-oraje);
+  color: white;
+}
+/* overzicht_page */
+.overzicht_page-container{
+  display: grid;
+  grid-template-columns: .6fr 1fr;
+  gap: 3em;
+  
+}
+.overzicht_page-stekjes_lijs h2{
+  padding: 1em;
+  background-color: var(--secondary-color);
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.overzicht_page-stekjes_lijs{
+  margin-top: 5em;
+  width: 100%;
+  height: 1477px;
+  overflow: auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
+.overzicht_page-userPost{
+  margin-top: 5em
+}
+.overzicht_page-stekjes_lijs ul{
+align-items: center;
+
+}
+.overzicht_page-stekjes_lijs li{
+  display: flex;
+  gap: .5em;
+  margin: 0;
+  list-style: none;
+  padding: 1em;
+  border-bottom: 1px solid var(--primary-color);
+
+}
+.overzicht_page-stekjes_lijs li img{
+  width: 40%;
+}
+
+.user_post-card{
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  margin: 0 0 1em 0;
+
+}
+.user-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color:var(--secondary-color);
+  color: white;
+}
+.user-info img{
+  width: 5% !important;
+  background-color: white;
+  border-radius: 50%;
+  margin: 5px;
+}
+.user-info p{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  margin-top: 1em;
+}
+.user_post{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: .5em;
+}
+.user_post-text{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  margin-top: 1em;  
+}
+.overzicht_page-userPost-pagenaitg{
+  position: absolute;
+  align-items: center;
+}
+/* user pagina  */
+.user_page{
+  padding: 5em 0;
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  gap: 1em;
+ 
+}
+.user_page-info{
+  padding: 1em;
+  /* border: 1px solid black; */
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+
+}
+.user_page-posten{
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
+/* verzorgen page */
+
+.verzorgen_page{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  padding: 5em 0 0 0;
+
+}
+.verzorgen_page > .verzorgen_page-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.verzorgen_page-img img{
+  width: 56%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.verzorgen_page-img{
+  position: relative;
+  width: 450px;
+}
+.Home-verzorgen_knop {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  width: 9.5em;
+  padding: 1.5em;
+  margin-top: 1em;
+  color: white;
+}
+.Home-verzorgen_knop:hover {
+  color: white;
+  background-color: var(--secondary-color-oraje);
+  transition: .4s;
+}
+/* footer */
+.footer_top{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  padding: 4em 5em;
+  background-color: var(--secondary-color);
+  color: white;
+}
+.footer_top p{
+  margin-bottom: 3em;
+}
+.footerbottom{
+  padding: 2em 5em 0 5em;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+}
+.footer-knop{
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid white;
+  width: 8.5em;
+  padding: 1.5em;
+  color: white;
+  
+}
+.footer_info a:hover{
+  color: var(--secondary-color-oraje);
+  border: 2px solid var(--secondary-color-oraje);
+  transition: .4s;
+}
+.footer_info h2{
+  color: white !important;
+}
+.sociaal_media-knoppen svg{
+ width: 4em;
+ padding: 0 .5em;
+ fill: white;
+}
+.sociaal_media-knoppen svg:hover{
+  fill: var(--secondary-color-oraje);
+  transition: .4s;
+ }
+
+
+ @media only screen and (max-width: 60em) and (orientation: portrait) { 
+  .bovennav > a{
+    margin-left: 12px;
+    font-size: 13px;
+  }
+
+  .bovennav{
+      margin-left: 0px; 
+  }
+
+  .logonav{
+      margin-left: 9px;
+      width:111px;
+      margin-top: -10px;
+  }
+  .aanbieden {
+    margin-right: 200px!important;
+  }
+
+  .hulp-items > a{
+      font-size: 14px;
+      /* margin-top: -110px;
+      margin-right: 140px; */
+      color: var(--primary-color);
+      margin-right: 112px;
+  }
+  .ondernav{
+      height: 50px;
+  }
+
+  .navitems{
+      margin-left: -12px;
+      display: inline-block;
+  }
+/* home page */
+.home_page-container, .verzorgen_page {
+  display: block;
+  padding: 0 0 0 1em  ;
+  margin-top: 2em;
+}
+.achtergrond_home {
+  width: 150px;
+  height: 150px;
+}
+.groene_achter-img{
+  width:175px;
+}
+.home_page-container img, .verzorgen_page-img img{
+ width: 100%;
+ left: 0;
+}
+.home_page-container > .home_page_text , .verzorgen_page-info {
+  margin-top: 2em;
+}
+.home_page-exinfo {
+ display: block;
+  padding: 6em 0 6em 0;
+  text-align: center;
+}
+.home_page-exinfo div{
+  padding: 0 0 4em 0;
+ }
+ .about-us{
+  height: 100%;
+  padding-bottom: 1em;
+ }
+/* aanmeld page */
+
+.aanmelden_page {
+  margin: 6em 0;
+  display: block;
+}
+/* overzicht page */
+.overzicht_page-container {
+  display: block;
+  gap: 1em;
+}
+.overzicht_page-stekjes_lijs {
+  margin-top:3em;
+  width: 100%;
+  height: 431px;
+
+}
+.overzicht_page-stekjes_lijs {
+  margin-top: 5em;
+  width: 100%;
+  height: 431px;
+  overflow: auto;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+}
+.user_post-card{
+  display: block;
+}
+.user_info {
+  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 16px;
+}
+
+/* verzorgen page */
+.verzorgen_page-img img {
+  width: 30%;
+  z-index: 1;
+  position: absolute;
+  margin-top: -10em;
+  margin-left: 2em;
+}
+ .verzorgen_page {
+  display: block;
+  padding: 0 0 0 1em  ;
+  margin-top: 2em;
+}
+.verzorgen_page-img{
+  margin-top: 4em;
+}
+
+/* ingelogd page */
+.container-ingelogd-page{
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+}
+
+
+ /* footer */
+ .footer_top {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 4em 3em;
+  background-color: var(--secondary-color);
+  color: white;
+}
+.footer_top div{
+  padding-bottom: 2.5em;
+}
+.footerbottom {
+  padding: 2em 3em 0 3em;
+}
+
+}
+#the-filter {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+ 
+/* (B) LIST */
+#the-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#the-list li {
+  padding: 10px;
+  border-bottom: 2px solid #ffe9e9;
+}
+#the-list li:hover { background: #fffed6; }
+#the-list li.hide { display: none; }
+@media screen and (max-width: 800px) {
+    .mobielfix{
+        margin-right: -100vw!important;
+    }
+}
+
